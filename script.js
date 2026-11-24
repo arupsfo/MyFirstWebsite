@@ -77,3 +77,26 @@ for (const button of filterButtons) {
 }
 
 projectFilters.hidden = false;
+
+const backToTopButton = document.querySelector(".back-to-top");
+const brandLink = document.querySelector(".brand");
+
+function updateBackToTop() {
+  const scrollRange = page.scrollHeight - page.clientHeight;
+  const revealAt = Math.min(320, scrollRange / 2);
+
+  // Keep a focused button available until visitors move focus away.
+  backToTopButton.hidden = document.activeElement !== backToTopButton &&
+    (scrollRange <= 0 || window.scrollY < revealAt);
+}
+
+backToTopButton.addEventListener("click", () => {
+  brandLink.focus({ preventScroll: true });
+  // The existing CSS sets smooth scrolling only when motion is allowed.
+  window.scrollTo({ top: 0, behavior: "auto" });
+});
+
+backToTopButton.addEventListener("focusout", updateBackToTop);
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+window.addEventListener("resize", updateBackToTop);
+updateBackToTop();

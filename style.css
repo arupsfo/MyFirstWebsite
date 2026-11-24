@@ -373,6 +373,18 @@ p {
   font-weight: 650;
 }
 
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.back-to-top:focus-visible {
+  outline-color: #ffffff;
+}
+
 /* Give navigation its own row when the header gets tight. */
 @media (max-width: 48rem) {
   .header-inner {
