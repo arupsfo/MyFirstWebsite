@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A beginner developer's portfolio and first programming projects.">
+  <title>My First Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">My First Portfolio</a>
+      <!-- Each navigation link points to a matching section ID. -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="home" aria-labelledby="welcome-title">
+      <div class="container hero-inner">
+        <div>
+          <h1 id="welcome-title">Hello, I'm a Developer!</h1>
+          <p>I'm learning to program with help from AI, one small project at a time. This portfolio is where I share what I'm building along the way.</p>
+          <a class="project-link" href="#projects">View my projects</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="art-dots">● ● ●</span>
+          <span class="art-code">&lt;/&gt;</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section container intro-grid">
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+        <p>I'm learning Python, HTML, CSS, and JavaScript using OpenAI Codex. I use Python to practice programming fundamentals and the web languages to build pages, style them, and make them interactive.</p>
+        <ul class="skills" aria-label="Languages I’m learning">
+          <li>Python</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
+
+      <section class="greeting-panel" id="greeting" aria-labelledby="greeting-title" hidden>
+        <h2 id="greeting-title">Say Hello</h2>
+        <form id="greeting-form">
+          <label for="visitor-name">Your name</label>
+          <div class="control-row">
+            <input id="visitor-name" type="text" autocomplete="given-name">
+            <button class="control-button" type="submit">Say Hello</button>
+          </div>
+        </form>
+        <p id="greeting-message" role="status"></p>
+      </section>
+    </div>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+        <div id="project-filters" role="group" aria-label="Filter projects" hidden>
+          <div class="control-row">
+            <button class="control-button" type="button" data-filter="all" aria-pressed="true" aria-controls="project-grid">All</button>
+            <button class="control-button" type="button" data-filter="python" aria-pressed="false" aria-controls="project-grid">Python</button>
+            <button class="control-button" type="button" data-filter="web" aria-pressed="false" aria-controls="project-grid">Web</button>
+          </div>
+        </div>
+        <div class="project-grid" id="project-grid">
+          <article class="project-card" data-category="python">
+            <h3>Python Calculator</h3>
+            <p>A practice project for basic arithmetic, user input, and choosing an operation in Python.</p>
+          </article>
+          <article class="project-card" data-category="web">
+            <h3>My First Website</h3>
+            <p>This portfolio uses HTML for structure, CSS for a responsive layout, and JavaScript to switch themes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Thanks for stopping by! I'm glad you took a look at what I'm learning and building.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">My First Portfolio</div>
+  </footer>
+</body>
+</html>
